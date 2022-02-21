@@ -23,7 +23,7 @@ namespace RPG.Control
         void Update()
         {
             if (health.IsDead()) return;
-            
+
             if (InAttackRange(player) && fighter.CanAttack(player))
             {
                 fighter.Attack(player);
@@ -38,6 +38,13 @@ namespace RPG.Control
         {
             float distanceToObj = Vector3.Distance(obj.transform.position, transform.position);
             return distanceToObj < chaseDistance;
+        }
+
+
+        void OnDrawGizmosSelected()
+        {
+            Gizmos.color = Color.blue;
+            Gizmos.DrawWireSphere(transform.position, chaseDistance);
         }
     }
 }
