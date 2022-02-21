@@ -22,15 +22,16 @@ namespace RPG.Control
             RaycastHit[] hits = Physics.RaycastAll(GetMouseRay());
             foreach (RaycastHit hit in hits)
             {
+                Fighter fighter = GetComponent<Fighter>();
                 CombatTarget target = hit.transform.GetComponent<CombatTarget>();
-                if (target)
+
+                if (!fighter.CanAttack(target)) continue;
+
+                if (Input.GetMouseButtonDown(0))
                 {
-                    if (Input.GetMouseButtonDown(0))
-                    {
-                        GetComponent<Fighter>().Attack(target);
-                    }
-                    return true;
+                    fighter.Attack(target);
                 }
+                return true;
             }
             return false;
         }
@@ -50,7 +51,7 @@ namespace RPG.Control
             return false;
         }
 
-        static Ray GetMouseRay()
+        Ray GetMouseRay()
         {
             return Camera.main.ScreenPointToRay(Input.mousePosition);
         }
