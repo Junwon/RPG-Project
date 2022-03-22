@@ -11,7 +11,7 @@ namespace RPG.Control
     {
         [SerializeField] float chaseDistance = 5f;
         [SerializeField] float suspicionTime = 5f;
-        [SerializeField] PatrolPath patrolPath;
+        [SerializeField] PatrolPath patrolPath = null;
         [SerializeField] float waypointTolerance = 1f;
         [SerializeField] float waypointDwellTime = 5f;
         [Range(0, 1)]
