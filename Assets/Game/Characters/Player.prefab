@@ -2317,15 +2317,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3173000832278391277, guid: f13d7cc27feb2224a9668933a1e69275,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3173000832278391278, guid: f13d7cc27feb2224a9668933a1e69275,
         type: 3}
       propertyPath: maxSpeed
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 3173000832278391277, guid: f13d7cc27feb2224a9668933a1e69275,
+    - target: {fileID: 9013078772044507578, guid: f13d7cc27feb2224a9668933a1e69275,
         type: 3}
-      propertyPath: m_Enabled
-      value: 0
+      propertyPath: uniqueIdentifier
+      value: player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f13d7cc27feb2224a9668933a1e69275, type: 3}
