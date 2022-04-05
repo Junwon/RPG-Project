@@ -2317,6 +2317,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9013078772044507578, guid: f13d7cc27feb2224a9668933a1e69275,
+        type: 3}
+      propertyPath: uniqueIdentifier
+      value: player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5203485426650276205, guid: f13d7cc27feb2224a9668933a1e69275,
+        type: 3}
+      propertyPath: handTransform
+      value: 
+      objectReference: {fileID: 8624340763408826807}
+    - target: {fileID: 5203485426650276205, guid: f13d7cc27feb2224a9668933a1e69275,
+        type: 3}
+      propertyPath: weaponPrefab
+      value: 
+      objectReference: {fileID: 7222006765990320570, guid: 72ad6fe342f0e3b4fa5baa9c137e2e2d,
+        type: 3}
     - target: {fileID: 3173000832278391277, guid: f13d7cc27feb2224a9668933a1e69275,
         type: 3}
       propertyPath: m_Enabled
@@ -2326,11 +2342,6 @@ PrefabInstance:
         type: 3}
       propertyPath: maxSpeed
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 9013078772044507578, guid: f13d7cc27feb2224a9668933a1e69275,
-        type: 3}
-      propertyPath: uniqueIdentifier
-      value: player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f13d7cc27feb2224a9668933a1e69275, type: 3}

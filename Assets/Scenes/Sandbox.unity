@@ -1561,15 +1561,15 @@ PrefabInstance:
       propertyPath: patrolPath
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 2228074381377853915, guid: 12497aae2fb08914082647d7688fdbdd,
-        type: 3}
-      propertyPath: healthPoints
-      value: 50
-      objectReference: {fileID: 0}
     - target: {fileID: 225952498810881706, guid: 12497aae2fb08914082647d7688fdbdd,
         type: 3}
       propertyPath: uniqueIdentifier
       value: a9016e79-c081-46ea-b90e-7e0d200244c4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2228074381377853915, guid: 12497aae2fb08914082647d7688fdbdd,
+        type: 3}
+      propertyPath: healthPoints
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12497aae2fb08914082647d7688fdbdd, type: 3}
@@ -2216,7 +2216,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1606185107}
-  m_LocalRotation: {x: 0.29823437, y: -0.1364069, z: 0.0431077, w: 0.9437114}
+  m_LocalRotation: {x: 0.2982344, y: -0.13640691, z: 0.04310771, w: 0.9437114}
   m_LocalPosition: {x: 12.92, y: 4.72, z: -8.925}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2725,6 +2725,18 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -9.270975
       objectReference: {fileID: 0}
+    - target: {fileID: 5366905628527606393, guid: de94f7c21a0ddfd479b97a54aec6cb08,
+        type: 3}
+      propertyPath: weaponOverride
+      value: 
+      objectReference: {fileID: 22100000, guid: cf64d6f61793736478ff1e2229aa4030,
+        type: 2}
+    - target: {fileID: 5366905628527606393, guid: de94f7c21a0ddfd479b97a54aec6cb08,
+        type: 3}
+      propertyPath: weapon
+      value: 
+      objectReference: {fileID: 11400000, guid: 24f4e55363a819f478ecb4d72fbf2cb7,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de94f7c21a0ddfd479b97a54aec6cb08, type: 3}
 --- !u!4 &8680232818522425261

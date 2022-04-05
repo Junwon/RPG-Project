@@ -101,6 +101,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30cf93deff988e74e88a144bd2127c18, type: 3}
+--- !u!4 &4566407033900178465 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 423694, guid: 30cf93deff988e74e88a144bd2127c18,
+    type: 3}
+  m_PrefabInstance: {fileID: 4566407033899805487}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &9094559827856699152
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -173,15 +179,26 @@ PrefabInstance:
       propertyPath: healthPoints
       value: 20
       objectReference: {fileID: 0}
-    - target: {fileID: 3173000832278391278, guid: f13d7cc27feb2224a9668933a1e69275,
+    - target: {fileID: 5203485426650276205, guid: f13d7cc27feb2224a9668933a1e69275,
         type: 3}
-      propertyPath: maxSpeed
-      value: 4
-      objectReference: {fileID: 0}
+      propertyPath: weapon
+      value: 
+      objectReference: {fileID: 11400000, guid: f4c968a7ccb3ede4b8231cd8bc7c34cf,
+        type: 2}
+    - target: {fileID: 5203485426650276205, guid: f13d7cc27feb2224a9668933a1e69275,
+        type: 3}
+      propertyPath: handTransform
+      value: 
+      objectReference: {fileID: 4566407033900178465}
     - target: {fileID: 3173000832278391277, guid: f13d7cc27feb2224a9668933a1e69275,
         type: 3}
       propertyPath: m_Speed
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3173000832278391278, guid: f13d7cc27feb2224a9668933a1e69275,
+        type: 3}
+      propertyPath: maxSpeed
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f13d7cc27feb2224a9668933a1e69275, type: 3}
