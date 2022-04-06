@@ -2333,6 +2333,22 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7222006765990320570, guid: 72ad6fe342f0e3b4fa5baa9c137e2e2d,
         type: 3}
+    - target: {fileID: 5203485426650276205, guid: f13d7cc27feb2224a9668933a1e69275,
+        type: 3}
+      propertyPath: rightHandTransform
+      value: 
+      objectReference: {fileID: 8624340763408826807}
+    - target: {fileID: 5203485426650276205, guid: f13d7cc27feb2224a9668933a1e69275,
+        type: 3}
+      propertyPath: leftHandTransform
+      value: 
+      objectReference: {fileID: 8360999369414005101}
+    - target: {fileID: 5203485426650276205, guid: f13d7cc27feb2224a9668933a1e69275,
+        type: 3}
+      propertyPath: defaultWeapon
+      value: 
+      objectReference: {fileID: 11400000, guid: 58410ee5b6f99e848b010348c7d37d8d,
+        type: 2}
     - target: {fileID: 3173000832278391277, guid: f13d7cc27feb2224a9668933a1e69275,
         type: 3}
       propertyPath: m_Enabled
