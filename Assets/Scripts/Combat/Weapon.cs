@@ -41,9 +41,9 @@ namespace RPG.Combat
                 {
                     return;
                 }
-                oldWeapon.name = "Destroying";
-                Destroy(oldWeapon.gameObject);
             }
+            oldWeapon.name = "Destroying";
+            Destroy(oldWeapon.gameObject);
         }
 
         private Transform GetMainHandTransform(Transform rightHand, Transform leftHand)
