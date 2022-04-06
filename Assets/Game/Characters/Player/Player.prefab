@@ -2343,12 +2343,6 @@ PrefabInstance:
       propertyPath: leftHandTransform
       value: 
       objectReference: {fileID: 8360999369414005101}
-    - target: {fileID: 5203485426650276205, guid: f13d7cc27feb2224a9668933a1e69275,
-        type: 3}
-      propertyPath: defaultWeapon
-      value: 
-      objectReference: {fileID: 11400000, guid: 58410ee5b6f99e848b010348c7d37d8d,
-        type: 2}
     - target: {fileID: 3173000832278391277, guid: f13d7cc27feb2224a9668933a1e69275,
         type: 3}
       propertyPath: m_Enabled

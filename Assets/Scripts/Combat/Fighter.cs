@@ -2,14 +2,16 @@ using UnityEngine;
 
 using RPG.Core;
 using RPG.Movement;
+using RPG.Saving;
 
 namespace RPG.Combat
 {
-    public class Fighter : MonoBehaviour, IAction
+    public class Fighter : MonoBehaviour, IAction, ISaveable
     {
         [SerializeField] float attackDelay = 2.0f;
         [SerializeField] Transform rightHandTransform = null;
         [SerializeField] Transform leftHandTransform = null;
+        [SerializeField] string defaultWeaponName = "Unarmed";
         [SerializeField] Weapon defaultWeapon = null;
 
         Health target;
@@ -19,7 +21,11 @@ namespace RPG.Combat
         void Start()
         {
             timeSinceLastAttack = attackDelay;
-            EquipWeapon(defaultWeapon);
+
+            if (currentWeapon == null)
+            {
+                EquipWeapon(defaultWeapon);
+            }
         }
 
         void Update()
@@ -114,6 +120,18 @@ namespace RPG.Combat
             weapon.Spawn(rightHandTransform, leftHandTransform, animator);
 
             currentWeapon = weapon;
+        }
+
+        public object CaptureState()
+        {
+            return currentWeapon.name;
+        }
+
+        public void RestoreState(object state)
+        {
+            string weaponName = (string)state;
+            Weapon weapon = Resources.Load<Weapon>(weaponName);
+            EquipWeapon(weapon);
         }
     }
 }
