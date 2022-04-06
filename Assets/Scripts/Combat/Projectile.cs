@@ -6,15 +6,24 @@ namespace RPG.Combat
     public class Projectile : MonoBehaviour
     {
         [SerializeField] float speed = 1.0f;
+        [SerializeField] bool isHoming = true;
 
         Health target = null;
         float damage = 0f;
+
+        void Start()
+        {
+            transform.LookAt(GetAimLocation());
+        }
 
         void Update()
         {
             if (target == null) return;
 
-            transform.LookAt(GetAimLocation());
+            if (isHoming && !target.IsDead())
+            {
+                transform.LookAt(GetAimLocation());
+            }
             transform.Translate(Vector3.forward * speed * Time.deltaTime);
         }
 
@@ -36,7 +45,7 @@ namespace RPG.Combat
 
         void OnTriggerEnter(Collider other)
         {
-            if (other.GetComponent<Health>() == target)
+            if (other.GetComponent<Health>() == target && !target.IsDead())
             {
                 target.TakeDamage(damage);
                 Destroy(gameObject);
