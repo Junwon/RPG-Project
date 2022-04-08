@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace RPG.Stats
 {
@@ -9,5 +7,11 @@ namespace RPG.Stats
         [Range(1, 99)]
         [SerializeField] int startingLevel = 1;
         [SerializeField] CharacterClass characterClass = CharacterClass.Player;
+        [SerializeField] Progression progression = null;
+
+        public float GetHealth()
+        {
+            return progression.GetHealth(characterClass, startingLevel);
+        }
     }
 }
