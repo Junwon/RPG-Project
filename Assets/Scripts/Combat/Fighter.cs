@@ -123,6 +123,11 @@ namespace RPG.Combat
             currentWeapon = weapon;
         }
 
+        public Health GetTarget()
+        {
+            return target;
+        }
+        
         public object CaptureState()
         {
             return currentWeapon.name;
