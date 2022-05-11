@@ -18,6 +18,7 @@ namespace RPG.Attributes
             {
                 healthPoints = GetComponent<BaseStats>().GetStat(Stat.Health);
             }
+            GetComponent<BaseStats>().onLevelUp += RegenerateHealth;
         }
 
         public bool IsDead()
@@ -56,6 +57,11 @@ namespace RPG.Attributes
             isDead = true;
             GetComponent<Animator>().SetTrigger("die");
             GetComponent<ActionScheduler>().CancelCurrentAction();
+        }
+
+        void RegenerateHealth()
+        {
+            healthPoints = GetComponent<BaseStats>().GetStat(Stat.Health);
         }
 
         public object CaptureState()
