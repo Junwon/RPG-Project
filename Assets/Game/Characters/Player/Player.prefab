@@ -2346,6 +2346,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8062990448356379462, guid: 0114e2075f004d44c8cf6b148dd0b50d,
         type: 3}
+    - target: {fileID: 6141776667676971298, guid: f13d7cc27feb2224a9668933a1e69275,
+        type: 3}
+      propertyPath: shouldUseModifiers
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5203485426650276205, guid: f13d7cc27feb2224a9668933a1e69275,
         type: 3}
       propertyPath: handTransform
