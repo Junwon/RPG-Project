@@ -1,6 +1,8 @@
 ﻿using System;
 using UnityEngine;
 
+using RPG.Utils;
+
 namespace RPG.Stats
 {
     public class BaseStats : MonoBehaviour
@@ -14,22 +16,41 @@ namespace RPG.Stats
 
         public event Action onLevelUp;
 
-        int currentLevel = 0;
+        LazyVar<int> currentLevel;
+        Experience experience;
+
+        void Awake()
+        {
+            experience = GetComponent<Experience>();
+            currentLevel = new LazyVar<int>(CalculateLevel);
+        }
 
         void Start()
         {
-            currentLevel = CalculateLevel();
-            Experience experience = GetComponent<Experience>();
-            if (experience != null) {
+            currentLevel.Init();
+        }
+
+        void OnEnable()
+        {
+            if (experience != null)
+            {
                 experience.onExperiencedGained += UpdateLevel;
+            }
+        }
+
+        void OnDisable()
+        {
+            if (experience != null)
+            {
+                experience.onExperiencedGained -= UpdateLevel;
             }
         }
 
         void UpdateLevel()
         {
             int newLevel = CalculateLevel();
-            if (newLevel > currentLevel) {
-                currentLevel = newLevel;
+            if (newLevel > currentLevel.value) {
+                currentLevel.value = newLevel;
                 LevelUpEffect();
                 onLevelUp();
             }
@@ -47,11 +68,7 @@ namespace RPG.Stats
 
         public int GetLevel()
         {
-            if (currentLevel <= 0)
-            {
-                currentLevel = CalculateLevel();
-            }
-            return currentLevel;
+            return currentLevel.value;
         }
 
         int CalculateLevel()
@@ -97,7 +114,7 @@ namespace RPG.Stats
         float GetPercentModifier(Stat stat)
         {
             if (!shouldUseModifiers) return 0.0f;
-            
+
             float total = 0;
             foreach (IModifierProvider provider in GetComponents<IModifierProvider>())
             {
