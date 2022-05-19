@@ -12,14 +12,6 @@ namespace RPG.Control
     {
         Health health;
 
-        enum CursorType
-        {
-            None,
-            Move,
-            Combat,
-            UI
-        }
-
         [System.Serializable]
         struct CursorMapping
         {
@@ -65,7 +57,7 @@ namespace RPG.Control
 
         bool InteractWithComponent()
         {
-            RaycastHit[] hits = Physics.RaycastAll(GetMouseRay());
+            RaycastHit[] hits = RaycastAllSorted();
             foreach (RaycastHit hit in hits)
             {
                 IRaycastable[] raycastables = hit.transform.GetComponents<IRaycastable>();
@@ -73,12 +65,24 @@ namespace RPG.Control
                 {
                     if (raycastable.HandleRaycast(this))
                     {
-                        SetCursor(CursorType.Combat);
+                        SetCursor(raycastable.GetCursorType());
                         return true;
                     }
                 }
             }
             return false;
+        }
+
+        RaycastHit[] RaycastAllSorted()
+        {
+            RaycastHit[] hits = Physics.RaycastAll(GetMouseRay());
+            float[] distances = new float[hits.Length];
+            for (int i = 0; i < distances.Length; i++)
+            {
+                distances[i] = hits[i].distance;
+            }
+            Array.Sort(distances, hits);
+            return hits;
         }
 
         bool InteractWithMovement()

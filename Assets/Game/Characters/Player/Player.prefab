@@ -1923,6 +1923,9 @@ MonoBehaviour:
   - type: 3
     texture: {fileID: 2800000, guid: b017dfab3916c1342b99c499d7ab500b, type: 3}
     hotspot: {x: 0, y: 0}
+  - type: 4
+    texture: {fileID: 2800000, guid: f8c873f1e53e83f4aabf342d6be1dfc3, type: 3}
+    hotspot: {x: 0, y: 0}
 --- !u!1 &7635029849941021202
 GameObject:
   m_ObjectHideFlags: 0
