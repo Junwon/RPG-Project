@@ -4,6 +4,7 @@ using UnityEngine.EventSystems;
 using RPG.Attributes;
 using RPG.Combat;
 using RPG.Movement;
+using System;
 
 namespace RPG.Control
 {
@@ -44,7 +45,7 @@ namespace RPG.Control
                 return;
             }
 
-            if (InteractWithCombat()) return;
+            if (InteractWithComponent()) return;
             
             if (InteractWithMovement()) return;
 
@@ -62,24 +63,20 @@ namespace RPG.Control
             return false;
         }
 
-        bool InteractWithCombat()
+        bool InteractWithComponent()
         {
             RaycastHit[] hits = Physics.RaycastAll(GetMouseRay());
             foreach (RaycastHit hit in hits)
             {
-                Fighter fighter = GetComponent<Fighter>();
-                CombatTarget target = hit.transform.GetComponent<CombatTarget>();
-                if (target == null) continue;
-
-                GameObject targetGameObject = target.gameObject;
-                if (!fighter.CanAttack(target.gameObject)) continue;
-
-                if (Input.GetMouseButton(0))
+                IRaycastable[] raycastables = hit.transform.GetComponents<IRaycastable>();
+                foreach (IRaycastable raycastable in raycastables)
                 {
-                    fighter.Attack(target.gameObject);
+                    if (raycastable.HandleRaycast(this))
+                    {
+                        SetCursor(CursorType.Combat);
+                        return true;
+                    }
                 }
-                SetCursor(CursorType.Combat);
-                return true;
             }
             return false;
         }
