@@ -2,6 +2,7 @@
 using UnityEngine;
 
 using RPG.Control;
+using RPG.Movement;
 
 namespace RPG.Combat
 {
@@ -49,7 +50,7 @@ namespace RPG.Combat
         {
             if (Input.GetMouseButtonDown(0))
             {
-                Pickup(callingController.GetComponent<Fighter>());
+                callingController.GetComponent<Mover>().MoveTo(gameObject.transform.position);
             }
             return true;
         }
