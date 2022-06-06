@@ -604,7 +604,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 179178377}
-  m_LocalRotation: {x: 0.068931036, y: -0.8498279, z: 0.11492061, w: 0.5097396}
+  m_LocalRotation: {x: 0.06893105, y: -0.8498279, z: 0.11492063, w: 0.5097396}
   m_LocalPosition: {x: 2.83, y: 4.57, z: 5.86}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1162,8 +1162,8 @@ GameObject:
   m_Name: WaterSurface
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &607680911
 Transform:
@@ -2585,7 +2585,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1567735874}
-  m_LocalRotation: {x: 0.11874708, y: 0.7914442, z: -0.16286486, w: 0.5770532}
+  m_LocalRotation: {x: 0.11874706, y: 0.7914442, z: -0.16286485, w: 0.5770531}
   m_LocalPosition: {x: -27.078075, y: 7.4446187, z: 9.578481}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
