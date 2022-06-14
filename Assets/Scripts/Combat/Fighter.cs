@@ -15,7 +15,6 @@ namespace RPG.Combat
         [SerializeField] float attackDelay = 2.0f;
         [SerializeField] Transform rightHandTransform = null;
         [SerializeField] Transform leftHandTransform = null;
-        [SerializeField] string defaultWeaponName = "Unarmed";
         [SerializeField] Weapon defaultWeapon = null;
 
         Health target;
