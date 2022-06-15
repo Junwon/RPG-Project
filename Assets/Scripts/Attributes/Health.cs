@@ -12,6 +12,7 @@ namespace RPG.Attributes
     public class Health : MonoBehaviour, ISaveable
     {
         [SerializeField] UnityEvent<float> takeDamage;
+        [SerializeField] HealthBar healthBar = null;
 
         LazyVar<float> healthPoints;
         
@@ -25,6 +26,7 @@ namespace RPG.Attributes
         void Start()
         {
             healthPoints.Init();
+            healthBar?.Init(this);
         }
 
         float GetInitialHealth()
@@ -51,9 +53,12 @@ namespace RPG.Attributes
         {
             healthPoints.value = Mathf.Max(healthPoints.value - damage, 0f);
             takeDamage.Invoke(damage);
-            
+
+            healthBar?.UpdateHealthBar();
+
             if (healthPoints.value <= 0)
             {
+                healthBar?.SetVisible(false);
                 Die();
                 AwardExperience(instigator);
             }
@@ -79,7 +84,12 @@ namespace RPG.Attributes
         
         public float GetPercentage()
         {
-            return healthPoints.value / GetComponent<BaseStats>().GetStat(Stat.Health) * 100.0f;
+            return GetFraction() * 100.0f;
+        }
+
+        public float GetFraction()
+        {
+            return healthPoints.value / GetComponent<BaseStats>().GetStat(Stat.Health);
         }
 
         void Die()
