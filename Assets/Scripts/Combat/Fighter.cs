@@ -161,6 +161,10 @@ namespace RPG.Combat
 
         public object CaptureState()
         {
+            if (currentWeapon.value == null)
+            {
+                return "Unarmed";
+            }
             return currentWeapon.value.name;
         }
 

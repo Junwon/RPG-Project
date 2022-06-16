@@ -108,14 +108,14 @@ namespace RPG.Attributes
 
         public object CaptureState()
         {
-            return healthPoints;
+            print("SAVING HEALTH for " + gameObject + ": " + healthPoints.value);
+            return healthPoints.value;
         }
 
         public void RestoreState(object state)
         {
             float health = (float)state;
             healthPoints.value = health;
-
             if (healthPoints.value <= 0)
             {
                 Die();

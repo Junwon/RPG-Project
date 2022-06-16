@@ -1,6 +1,7 @@
 ﻿
 namespace RPG.Utils
 {
+    [System.Serializable]
     public class LazyVar<T>
     {
         T _value;
