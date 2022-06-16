@@ -108,7 +108,6 @@ namespace RPG.Attributes
 
         public object CaptureState()
         {
-            print("SAVING HEALTH for " + gameObject + ": " + healthPoints.value);
             return healthPoints.value;
         }
 
