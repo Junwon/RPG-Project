@@ -5,7 +5,7 @@ using RPG.Attributes;
 namespace RPG.Combat
 {
     [CreateAssetMenu(fileName = "Weapon", menuName = "Weapons/Make New Weapon", order = 0)]
-    public class Weapon : ScriptableObject
+    public class WeaponConfig : ScriptableObject
     {
         [SerializeField] float weaponRange = 2.0f;
         [SerializeField] float weaponDamage = 10f;
