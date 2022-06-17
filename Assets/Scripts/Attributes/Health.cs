@@ -13,6 +13,7 @@ namespace RPG.Attributes
     {
         [SerializeField] UnityEvent<float> takeDamage;
         [SerializeField] HealthBar healthBar = null;
+        [SerializeField] UnityEvent onDie;
 
         LazyVar<float> healthPoints;
         
@@ -58,6 +59,7 @@ namespace RPG.Attributes
 
             if (healthPoints.value <= 0)
             {
+                onDie.Invoke();
                 healthBar?.SetVisible(false);
                 Die();
                 AwardExperience(instigator);
