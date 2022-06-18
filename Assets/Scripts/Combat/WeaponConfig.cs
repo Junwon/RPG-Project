@@ -10,21 +10,23 @@ namespace RPG.Combat
         [SerializeField] float weaponRange = 2.0f;
         [SerializeField] float weaponDamage = 10f;
         [SerializeField] float weaponPercentBonus = 0f;
-        [SerializeField] GameObject equippedPrefab = null;
+        [SerializeField] Weapon equippedPrefab = null;
         [SerializeField] AnimatorOverrideController animatorOverride = null;
         [SerializeField] bool isRightHanded = true;
         [SerializeField] Projectile projectile = null;
 
         const string weaponName = "Weapon";
 
-        public void Spawn(Transform rightHand, Transform leftHand, Animator animator)
+        public Weapon Spawn(Transform rightHand, Transform leftHand, Animator animator)
         {
             DestroyOldWeapon(rightHand, leftHand);
             
+            Weapon weapon = null;
+
             if (equippedPrefab != null)
             {
-                GameObject weapon = Instantiate(equippedPrefab, GetMainHandTransform(rightHand, leftHand));
-                weapon.name = weaponName;
+                weapon = Instantiate(equippedPrefab, GetMainHandTransform(rightHand, leftHand));
+                weapon.gameObject.name = weaponName;
             }
             if (animatorOverride != null)
             {
@@ -38,6 +40,8 @@ namespace RPG.Combat
                     animator.runtimeAnimatorController = overrideController.runtimeAnimatorController;
                 }
             }
+
+            return weapon;
         }
 
         void DestroyOldWeapon(Transform rightHand, Transform leftHand)
