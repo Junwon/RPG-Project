@@ -269,7 +269,7 @@ PrefabInstance:
     - target: {fileID: 3300054582050228399, guid: f13d7cc27feb2224a9668933a1e69275,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3538214161232328683, guid: f13d7cc27feb2224a9668933a1e69275,
         type: 3}
@@ -302,11 +302,51 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6560792841950639469, guid: f13d7cc27feb2224a9668933a1e69275,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6979990230837458635, guid: f13d7cc27feb2224a9668933a1e69275,
         type: 3}
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 3521140997946285555}
+    - target: {fileID: 6979990230837458635, guid: f13d7cc27feb2224a9668933a1e69275,
+        type: 3}
+      propertyPath: takeDamage.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6979990230837458635, guid: f13d7cc27feb2224a9668933a1e69275,
+        type: 3}
+      propertyPath: takeDamage.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6979990230837458635, guid: f13d7cc27feb2224a9668933a1e69275,
+        type: 3}
+      propertyPath: takeDamage.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 960506700070296444}
+    - target: {fileID: 6979990230837458635, guid: f13d7cc27feb2224a9668933a1e69275,
+        type: 3}
+      propertyPath: takeDamage.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6979990230837458635, guid: f13d7cc27feb2224a9668933a1e69275,
+        type: 3}
+      propertyPath: takeDamage.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: Aggrevate
+      objectReference: {fileID: 0}
+    - target: {fileID: 6979990230837458635, guid: f13d7cc27feb2224a9668933a1e69275,
+        type: 3}
+      propertyPath: takeDamage.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: RPG.Control.AIController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6979990230837458635, guid: f13d7cc27feb2224a9668933a1e69275,
+        type: 3}
+      propertyPath: takeDamage.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7477160569025169039, guid: f13d7cc27feb2224a9668933a1e69275,
         type: 3}
       propertyPath: m_RootOrder
